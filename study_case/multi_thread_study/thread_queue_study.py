@@ -43,3 +43,8 @@ for i in range(2):
 
 for i in range(10):
     q.put(i)  # put方法使得未完成的任务数量+1
+
+while True:
+    if q.empty():
+        print('任务全部完成')
+        exit()
