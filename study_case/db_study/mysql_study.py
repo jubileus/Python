@@ -29,8 +29,15 @@ def batch_insert(conn, cur):
 # 测试:查询全部用户
 def query(cur):
     user_list = User.get_all(cur)
+
     for user in user_list:
         user.info()
+
+    # # ------- 用户对象列表转换为用户字典列表（间接得到用户列表json） S -------
+    # for i in range(len(user_list)):
+    #     user_list[i] = user_list[i].__dict__
+    # print(user_list)
+    # # ------- 用户对象列表转换为用户字典列表（间接得到用户列表json） E -------
 
 
 # 测试:根据id查询用户
