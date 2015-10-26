@@ -2,17 +2,14 @@
 
 import pymysql
 
-from util.base.format.base import s
-from util.base.format.base import i
-
 __author__ = 'jubileus'
 
 
 # 连接数据库
 def conn_db(host, user, passwd, db, port, charset):
     # 获取Connection
-    conn = pymysql.connect(host=s(host), user=s(user), passwd=s(passwd), db=s(db), port=i(port),
-                           charset=s(charset))
+    conn = pymysql.connect(host=str(host), user=str(user), passwd=str(passwd), db=str(db), port=int(port),
+                           charset=str(charset))
     # 获取Cursor
     cur = conn.cursor()
     return conn, cur
@@ -35,5 +32,3 @@ def operate(conn, cur, sql):
     stat = cur.execute(sql)
     conn.commit()
     return stat
-
-
