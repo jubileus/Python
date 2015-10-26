@@ -12,6 +12,7 @@ __author__ = 'jubileus'
 此工具类生成的excel在windows平台下无法打开
 '''
 
+
 # 打开xls文件
 def open_excel(file='file.xls', encoding='utf-8'):
     try:
