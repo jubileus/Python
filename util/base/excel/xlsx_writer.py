@@ -11,6 +11,7 @@ __author__ = 'jubileus'
     此工具类用于写入07+版excel
 '''
 
+
 # 创建要写入数据的workbook
 def create_workbook():
     openpyxl.Workbook.encoding = 'gbk'
