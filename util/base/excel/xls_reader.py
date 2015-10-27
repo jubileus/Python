@@ -16,7 +16,7 @@ def open_excel(file='file.xls', encoding='utf-8'):
         xlrd.Book.encoding = encoding
         return xlrd.open_workbook(file)
     except Exception:
-        traceback.print_exc()
+        # traceback.print_exc()
         return None
 
 
