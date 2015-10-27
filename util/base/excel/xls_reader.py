@@ -1,15 +1,12 @@
 # coding=UTF-8
+
 import traceback
 import xlrd
-from openpyxl import Workbook
-from openpyxl.writer.excel import ExcelWriter
-import openpyxl
 
 __author__ = 'jubileus'
 
-
 '''
-此工具类生成的excel在windows平台下无法打开
+    此工具类用于读取03版excel
 '''
 
 
@@ -95,34 +92,3 @@ def read_row(ws, row_index, col_s=-1, col_e=-1):
 def read_cell(ws, row_index=0, col_index=0):
     row = ws.row_values(row_index)
     return row[col_index] if row and row[col_index] else ''
-
-
-# 创建要写入数据的workbook
-def create_workbook():
-    openpyxl.Workbook.encoding = 'gbk'
-    return Workbook()
-
-
-# 创建Writer
-def create_writer(wb):
-    return ExcelWriter(workbook=wb)
-
-
-# 创建sheet
-def create_sheet(wb, ws_name='Sheet1', ws_index=0):
-    ws = wb.worksheets[ws_index]
-    ws.title = ws_name
-    return ws
-
-
-# 保存workbook到磁盘
-def save_workbook(ew, path='excel_1.xls'):
-    ew.save(filename=path)
-    
-    
-# 写入数据
-def write(data, ws):
-    for r in range(len(data)):
-        row = data[r]
-        for c in range(len(row)):
-            ws.cell(row=r, column=c+1).value = row[c]

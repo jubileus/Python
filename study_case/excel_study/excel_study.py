@@ -1,12 +1,12 @@
 # coding=UTF-8
 
-from util.base.excel.xl_util import open_excel
-from util.base.excel.xl_util import read
-from util.base.excel.xl_util import create_workbook
-from util.base.excel.xl_util import create_writer
-from util.base.excel.xl_util import create_sheet
-from util.base.excel.xl_util import write
-from util.base.excel.xl_util import save_workbook
+from util.base.excel.xls_reader import open_excel
+from util.base.excel.xls_reader import read
+from util.base.excel.xlsx_writer import create_workbook
+from util.base.excel.xlsx_writer import create_writer
+from util.base.excel.xlsx_writer import create_sheet
+from util.base.excel.xlsx_writer import write
+from util.base.excel.xlsx_writer import save_workbook
 
 __author__ = 'jubileus'
 
@@ -25,3 +25,4 @@ def test():
 
     save_workbook(ew, '/home/jubileus/office file/rs.xlsx')
 
+test()
