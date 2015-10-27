@@ -5,6 +5,11 @@ import pymysql
 __author__ = 'jubileus'
 
 
+'''
+    此工具类用于MySQL的增删改查操作
+'''
+
+
 # 连接数据库
 def conn_db(host, user, passwd, db, port, charset):
     # 获取Connection
